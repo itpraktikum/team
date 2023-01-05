@@ -1,0 +1,862 @@
+@import url('https://fonts.googleapis.com/css2?family=Montez&family=Montserrat:ital,wght@0,200;0,400;1,400&family=Roboto:wght@300;900&family=Sono&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    left: 0;
+    top: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* The started loader */
+
+loader{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #110341;
+    z-index: 3333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .4s ease;
+}
+
+.loader .circle_box{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.loader .circle_box:nth-child(1){
+    animation: circleLoader_0 3s infinite;
+}
+
+@keyframes circleLoader_0 {
+    0%{
+        transform: translateY(0px);
+    }
+    25%{
+        transform: translateY(-25px);
+        -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+         -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+        box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    }
+    50%{
+        transform: translateY(0px);
+    }
+    75%{
+        transform: translateY(25px);
+        -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+-moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+.loader .circle_box:nth-child(2){
+    animation: circleLoader_1 3s infinite;
+}
+
+@keyframes circleLoader_1{
+    0%{
+        transform: translateY(0px);
+    }
+    25%{
+        transform: translateY(25px);
+        -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+-moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    }50%{
+        transform: translateY(0px);
+    }
+    75%{
+        transform: translateY(-25px);
+        -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+-moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    }100%{
+        transform: translateY(0px);
+    }
+}
+
+.loader .circle_box:nth-child(3){
+    animation: circleLoader_3 3s infinite;
+}
+
+@keyframes circleLoader_3 {
+    0%{
+        transform: translateY(0px);
+    }
+    25%{
+        transform: translateY(-25px);
+        -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+-moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    }
+    50%{
+        transform: translateY(0px);
+    }
+    75%{
+        transform: translateY(25px);
+        -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+-moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+.loader .circle_box:nth-child(4){
+    animation: circleLoader_1 3s infinite;
+}
+
+@keyframes circleLoader_4{
+    0%{
+        transform: translateY(0px);
+    }25%{
+        transform: translateY(25px);
+        -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+-moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    }50%{
+        transform: translateY(0px);
+    }75%{
+        transform: translateY(-25px);
+        -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+-moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+/* The start header */
+
+.header{
+    z-index: 999;
+    width: 100%;
+    padding: 15px 10%;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    background: #110341;
+    -webkit-box-shadow: 0px -5px 5px -5px rgba(0, 0, 0, 0.6) inset;
+    -moz-box-shadow: 0px -5px 5px -5px rgba(0, 0, 0, 0.6) inset;
+    box-shadow: 0px -5px 5px -5px rgba(0, 0, 0, 0.6) inset;
+}
+
+.header.sticky{
+    transition: .7s ease;
+    background: #1a055f;
+}
+
+.header .nav_logo{
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.nav_logo img{
+    width: 100%;
+    height: 100%;
+}
+
+.header i{
+    font-size: 24px;
+    display: none;
+    color: #fff;
+}
+
+.header .nav_link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .nav_link a{
+    text-decoration: none;
+    line-height: 22px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    font-size: 15px;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 200;
+    text-transform: uppercase;
+    margin: 0 15px;
+    position: relative;
+    padding-bottom: 7px;
+}
+
+.nav_link a:after{
+    position: absolute;
+    content: "";
+    height: 2px;
+    bottom: 0;
+    display: block;
+    width: 0%;
+    background-color: #fff;
+    transition: .4s ease;
+}
+
+.nav_link a:hover::after{
+    width: 30%;
+}
+
+.nav_link .btn{
+    padding: 7px 25px;
+    border: 1px solid rgba(39, 140, 245, 0.8);
+    border-radius: 5px;
+    background-color: rgba(39, 140, 245, 0.8);
+    position: relative;
+    transition: .4s ease;
+}
+
+.nav_link .btn::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #110341;
+    transition: .4s ease;
+    width: 0%;
+    height: 2px;
+    border-radius: 1px;
+}
+
+.nav_link .btn:hover::after{
+    width: 30%;
+}
+
+.nav_link .btn::before{
+    position: absolute;
+    top: 0;
+    content: "";
+    height: 2px;
+    width: 0%;
+    background-color: #110341;
+    border-radius: 1px;
+    right: 0;
+    transition: .4s ease;
+}
+
+.nav_link .btn:hover::before{
+    width: 30%;
+}
+
+/* Responsive header box */
+
+@media only screen and (max-width: 1200px) {
+    .header{
+        padding: 15px 6%;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .header .nav_logo{
+        width: 190px;
+        height: 40;
+    }
+    .header .nav_link a{
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .header .nav_logo{
+        width: 150px;
+        height: 30px;
+    }
+    .header .nav_link a{
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    .header{
+        padding: 10px;
+    }
+    .header .nav_link a{
+        margin: 0 6px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .header i{
+        display: block;
+    }
+    .header .nav_link{
+        width: 50%;
+        height: 100vh;
+        right: 0;
+        top: 0;
+        display: none;
+        justify-content: flex-start;
+        align-items: center;
+        position: fixed;
+        flex-direction: column;
+        background-color: #fff;
+        transition: .4s ease;
+    }
+    .header .nav_link i{
+        color: #527fdf;
+    }
+    .header .nav_link a.fund{
+        color: #527fdf;
+    }
+}
+
+/* Contact_box */
+
+.contact{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(1, 1, 1, 0.7);
+    position: fixed;
+    z-index: 2222;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact .contact_box{
+    width: 600px;
+    background-color: #FFFFFE;
+    border-radius: 25px;
+    border: 5px solid #527fdf;
+    padding: 25px;
+    position: relative;
+}
+
+.contact_box .closeBtn{
+    position: absolute;
+    right: 25px;
+    top: 25px;
+}
+
+.closeBtn i{
+    font-size: 35px;
+    color: #527fdf;
+    cursor: pointer;
+}
+
+.contact_box .contact_body{
+    width: 100%;
+    height: auto;
+}
+
+.contact_body h1{
+    font-size: 35px;
+    margin-bottom: 35px;
+    color: #527fdf;
+}
+
+.contact_body .form{
+    width: 100%;
+    padding: 15px 7px;
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid #527fdf;
+    align-items: center;
+    margin: 12px 0;
+}
+
+.form .label{
+    width: 50px;
+    height: 30px;
+    border-right: 1px solid #527fdf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.label img{
+    width: 25px;
+    height: 25px;
+}
+
+.form .input-box{
+    width: auto;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-box .link{
+    font-size: 16px;
+    color: #999;
+    text-decoration: none;
+}
+
+.input-box .link:hover{
+    text-decoration: underline;
+}
+
+/* The strat first section */
+
+.section{
+    width: 100%;
+    height: auto;
+    padding: 250px 0 100px 0;
+    background-color: #110341;
+}
+
+.section .area_box{
+    width: 100%;
+    padding: 0 12%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.area_box .area_text .h1{
+    font-family: 'Poppins',sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 105px;
+    color: #fff;
+}
+
+.area_box .area_text .h2{
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 70px;
+    margin-bottom: 70px;
+    color: #fff;
+    line-height: 105px;
+}
+
+.area_text .btn{
+    padding: 18px 30px;
+    border: 1px solid rgba(39, 140, 245, 0.8);
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+    line-height: 28px;
+    letter-spacing: 1px;
+    font-family: "Poppins", sans-serif;
+    transition: .4s ease;
+    background-color: rgba(39, 140, 245, 0.8);
+}
+
+.area_box .area_text .btn i{
+    color: #fff;
+    font-size: 20px;
+    transition: .4s ease;
+    margin: 0 0 0 15px;
+}
+
+.area_text .btn:hover{
+    background-color: rgba(30, 109, 194, 0.8);
+    border: 1px solid rgba(30, 109, 194, 0.8);
+}
+
+.area_text .btn:hover .fa-solid{
+    padding-left: 25px;
+}
+
+.area_png{
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.area_png img{
+    width: 653.38px;
+    height: 637px;
+}
+
+/* Get started responsive fundamention section */
+
+@media only screen and (max-width: 1600px) {
+    .area_png img{
+        width: 553.38px;
+        height: 537px;
+    }
+    .section .area_box{
+        padding: 0 5%;
+    }
+    .area_box .area_text{
+        padding: 5% 0 0 0;
+    }
+    .area_box .area_text .h1{
+        font-size: 58px;
+        line-height: 74px;
+    }
+    .area_box .area_text .h2{
+        font-size: 50px;
+        line-height: 74px;
+    }
+}
+
+@media only screen and (max-width: 1210px) {
+    .section{
+        padding: 150px 0 100px 0;
+    }
+    .section .area_box{
+        padding: 0 1%;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .section .area_box{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+    .area_box .area_png{
+        margin-top: 100px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .area_box .area_text .h1{
+        font-size: 42px;
+        line-height: 68px;
+    }
+    .area_box .area_text .h2{
+        font-size: 36px;
+        line-height: 56px;
+    }
+    .area_png img{
+        width: 453.38px;
+        height: 437px;
+    }
+    .area_text .btn{
+        font-size: 14px;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+    .area_box .area_png{
+        margin-top: 50px;
+    }
+}
+
+/* The started second section */
+
+.second_section{
+    width: 100%;
+    padding: 50px 200px;
+    background-color: #fff;
+}
+
+.second_body-top{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.second_body-top img{
+    width: 700px;
+    height: 350px;
+    box-shadow: 0 5px 15px rgba(34, 60, 80, 0.2);
+    border-radius: 25px;
+}
+
+.second_body{
+    width: 100%;
+    padding: 50px 100px;
+}
+
+.second_body .second_body-title{
+    position: relative;
+    padding: 25px 0;
+    text-align: center;
+    width: 100%;
+    border-bottom: 2px solid #527fdf;
+}
+
+.second_body .second_body-title h1{
+    font-size: 32px;
+    line-height: 48px;
+    color: #333;
+}
+
+.second_body-card{
+    width: 100%;
+    height: auto;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.second_body .card-box{
+    width: 300px;
+    height: 150px;
+    border-radius: 25px;
+    color: #fff;
+    padding: 25px;
+    margin-top: 25px;
+}
+
+.second_body .card-box:nth-child(1){
+    background: #5ef38c;
+}
+.second_body .card-box:nth-child(2){
+    background: #00bfff;
+}
+.second_body .card-box:nth-child(3){
+    background: #f3b87c;
+}
+.second_body .card-box:nth-child(4){
+    background: #5ef38c;
+}
+
+.second_body .card-box h2{
+    font-size: 28px;
+    font-weight: 500;
+    cursor: default;
+    line-height: 36px;
+}
+
+@media only screen and (max-width: 1110px) {
+    .second_section{
+        padding: 50px;
+    }
+}
+/* The finished section name is Index*/
+
+/* The started section name is Paramametr */
+
+.sect{
+    width: 100%;
+    background-color: #110341;
+    padding: 100px 200px 50px 200px;
+}
+
+.sect .video{
+    width: 100%;
+    padding: 25px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sect .video-title{
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.video-title h2{
+    font-size: 35px;
+    color: #FFFFFE;
+    line-height: 65px;
+    text-decoration: underline;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+
+.video-title p{
+    font-size: 18px;
+    color: #fff;
+    letter-spacing: 1px;
+    line-height: 28px;
+}
+
+@media only screen and (max-width: 1400px) {
+    .sect{
+        padding-left: 50px;
+        padding-right: 50px;
+    }    
+}
+
+@media only screen and (max-width: 800px) {
+    .sect{
+        padding-left: 20px;
+        padding-right: 20px;
+    }    
+    .video-title{
+        padding: 25px 0;
+    }
+    .video-title h2{
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+    .video-title p{
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .video video{
+        width: 500px;
+        height: 250px;
+    }
+}
+
+/* The started sect second section */
+
+.sect_second{
+    width: 100%;
+    height: auto;
+    padding: 50px 200px;
+    background-color: #fff;
+}
+
+.sect-body{
+    width: 100%;
+    padding: 0 200px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.sect_second .sect-box{
+    margin: 25px 0;
+    width: 500px;
+    height: 530px;
+    background-color: #fff;
+    border: 1px solid #aaa;
+    cursor: pointer;
+    position: relative;
+}
+
+.sect_second .sect-box::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0px;
+    background-color: #00bfff;
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+    top: 0;
+    transition: .4s ease;
+    left: 0;
+}
+
+.sect_second .sect-box:hover::after{
+    height: 50px;
+}
+
+.sect-img{
+    width: 100%;
+    height: 350px;
+}
+
+.sect-img img{
+    width: 100%;
+    height: 100%;
+}
+
+.sect-text{
+    width: 100%;
+    height: 110px;
+    padding: 25px;
+    border-bottom: 1px solid #aaa;
+}
+
+.sect-text h2{
+    color: #1f2949;
+    font-size: 28px;
+    line-height: 44px;
+}
+
+.sect-text p{
+    color: #797c7f;
+}
+
+.sect-box .sect-footer{
+    width: 100%;
+    height: auto;
+    padding: 20px;
+}
+
+.sect-footer a{
+    text-decoration: none;
+    color: #00bfff;
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+
+.sect-footer a:hover{
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 1850px) {
+    .sect_second{
+        padding: 0px 100px;
+    }
+}
+
+@media only screen and (max-width: 1650px) {
+    .sect-body{
+        padding: 0 100px;
+    }
+}
+
+@media only screen and (max-width: 1450px) {
+    .sect_second{
+        padding: 0px;
+    }
+}
+
+@media only screen and (max-width: 1250px) {
+    .sect-body{
+        padding: 0px 50px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .sect-body{
+        padding: 0px 20px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .sect_second .sect-box{
+        width: 400px;
+        height: 430px;
+    }
+    .sect-img{
+        height: 250px;
+    }
+}
+
+/* The started footer section */
+
+.footer_sect{
+    width: 100%;
+    height: auto;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    background: #1a055f;
+    color: #fff;
+    align-items: center;
+}
